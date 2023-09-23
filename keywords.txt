@@ -1,0 +1,19 @@
+Pin	KEYWORD1
+
+setInput KEYWORD2
+setOutput KEYWORD2
+setInputPullup KEYWORD2
+setInputPulldown KEYWORD2
+getMode KEYWORD2
+setMode KEYWORD2
+setLow KEYWORD2
+setHigh KEYWORD2
+toggleState KEYWORD2
+setState KEYWORD2
+getStatus KEYWORD2
+value KEYWORD2
+getOutputState KEYWORD2
+pin KEYWORD2
+getModeReg KEYWORD2
+getInputReg KEYWORD2
+getOutputReg KEYWORD2

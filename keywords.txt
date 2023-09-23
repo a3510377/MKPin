@@ -9,9 +9,12 @@ setMode KEYWORD2
 setLow KEYWORD2
 setHigh KEYWORD2
 toggleState KEYWORD2
+toggle KEYWORD2
 setState KEYWORD2
 getStatus KEYWORD2
 value KEYWORD2
+getAnalog KEYWORD2
+setAnalog KEYWORD2
 getOutputState KEYWORD2
 pin KEYWORD2
 getModeReg KEYWORD2

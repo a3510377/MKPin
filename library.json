@@ -1,21 +1,21 @@
 {
-  "name": "HelloWorld",
+  "name": "MKPin",
   "version": "1.0.0",
-  "description": "A \"Hello world\" program is a computer program that outputs \"Hello World\" (or some variant) on a display device",
-  "keywords": "planet, happiness, people",
+  "description": "Better control over pin position Speed ​​up using manually defined register addresses",
+  "keywords": "pin, signal, input, output",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/hello-world.git"
+    "url": "https://github.com/a3510377/MKPin.git"
   },
   "authors": [
     {
-      "name": "John Smith",
-      "email": "me@john-smith.com",
-      "url": "https://www.john-smith/contact"
+      "name": "a3510377",
+      "email": "a102009102009@gmail.com",
+      "url": "https://github.com/a3510377"
     }
   ],
   "license": "MIT",
-  "homepage": "https://www.helloworld.org/",
+  "homepage": "https://github.com/a3510377/MKPin",
   "dependencies": {},
   "frameworks": "*",
   "platforms": "*"

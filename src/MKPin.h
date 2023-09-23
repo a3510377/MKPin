@@ -19,7 +19,6 @@ class Pin {
   Pin(uint8_t pin) : _pin(pin) {
     _bitMask = digitalPinToBitMask(pin);
     _bitNotMask = ~_bitMask;
-    _timer = digitalPinToTimer(pin);
 
     uint8_t port = digitalPinToPort(pin);
     _reg = portModeRegister(port);
@@ -32,7 +31,6 @@ class Pin {
       : _pin(pin),
         _bitMask(bitMask),
         _bitNotMask(~bitMask),
-        _timer(timer),
         _reg(reg),
         _in(in),
         _out(out) {}
@@ -157,6 +155,14 @@ class Pin {
   }
 
   /**
+   * Toggle the pin output (HIGH -> LOW, LOW -> HIGH), equivalent to
+   * toggleState()
+   */
+  inline void toggle() {
+    toggleState();
+  }
+
+  /**
    * Set the pin output to state
    *
    * @param state pin status (HIGH, LOW)
@@ -194,6 +200,24 @@ class Pin {
   }
 
   /**
+   * Get the pin analog input value, equivalent to analogRead()
+   *
+   * @return pin analog input value (0~1023)
+   */
+  inline int getAnalog() {
+    return analogRead(_pin);
+  }
+
+  /**
+   * Get the pin output status, equivalent to analogWrite()
+   *
+   * @param status pin output status (0-255)
+   */
+  inline void setAnalog(int value) {
+    analogWrite(_pin, value);
+  }
+
+  /**
    * Get the pin output status
    *
    * @return pin status (HIGH, LOW)
@@ -222,7 +246,7 @@ class Pin {
   }
 
  protected:
-  uint8_t _pin, _bitMask, _bitNotMask, _timer;
+  uint8_t _pin, _bitMask, _bitNotMask;
   volatile uint8_t *_reg, *_in, *_out;
 };
 

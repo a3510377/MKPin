@@ -33,10 +33,12 @@ pin.setMode(<mode>); // sets the pin mode (INPUT, OUTPUT, INPUT_PULLUP)
 ### IO
 
 ```cpp
+// > digitalWrite(<pin>, LOW);
 // - pin = LOW;
 // - pin.setState(LOW);
 pin.setLow();
 
+// > digitalWrite(<pin>, HIGH);
 // - pin = HIGH;
 // - pin.setState(HIGH);
 pin.setHigh();

@@ -56,9 +56,9 @@ pin.setState(<value>);
 
 // > digitalRead(<pin>)
 // - pin.value();
-pin.getStatus();
+pin.getState();
 // > digitalRead(<pin>)
-// - pin.getStatus();
+// - pin.getState();
 pin.value();
 // > digitalWrite(<pin>, <value>)
 // - pin.setState(<value>);

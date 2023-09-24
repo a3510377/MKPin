@@ -47,7 +47,7 @@ class Pin {
   /**
    * Set the pin output to state
    *
-   * @param state pin status (HIGH, LOW)
+   * @param state pin state (HIGH, LOW)
    */
   Pin &operator=(uint8_t state) {
     setState(state);
@@ -165,7 +165,7 @@ class Pin {
   /**
    * Set the pin output to state
    *
-   * @param state pin status (HIGH, LOW)
+   * @param state pin state (HIGH, LOW)
    */
   inline void setState(uint8_t state) {
     if (state) setHigh();
@@ -173,30 +173,30 @@ class Pin {
   }
 
   /**
-   * Get the pin input status
+   * Get the pin input state
    *
-   * @return pin status (HIGH, LOW)
+   * @return pin state (HIGH, LOW)
    */
-  inline uint8_t getStatus() {
+  inline uint8_t getState() {
     return *_in & _bitMask ? HIGH : LOW;
   }
 
   /**
-   * Get the pin input status, equivalent to getStatus()
+   * Get the pin input state, equivalent to getState()
    *
-   * @return pin status (HIGH, LOW)
+   * @return pin state (HIGH, LOW)
    */
   inline uint8_t value() {
-    return getStatus();
+    return getState();
   }
 
   /**
-   * Get the pin input status, equivalent to setState()
+   * Get the pin input state, equivalent to setState()
    *
-   * @param state pin status (HIGH, LOW)
+   * @param state pin state (HIGH, LOW)
    */
-  inline void value(uint8_t status) {
-    setState(status);
+  inline void value(uint8_t state) {
+    setState(state);
   }
 
   /**
@@ -209,18 +209,18 @@ class Pin {
   }
 
   /**
-   * Get the pin output status, equivalent to analogWrite()
+   * Get the pin output state, equivalent to analogWrite()
    *
-   * @param status pin output status (0-255)
+   * @param state pin output state (0-255)
    */
   inline void setAnalog(int value) {
     analogWrite(_pin, value);
   }
 
   /**
-   * Get the pin output status
+   * Get the pin output state
    *
-   * @return pin status (HIGH, LOW)
+   * @return pin state (HIGH, LOW)
    */
   inline uint8_t getOutputState() {
     return *_out & _bitMask ? HIGH : LOW;

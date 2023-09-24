@@ -11,7 +11,7 @@ setHigh KEYWORD2
 toggleState KEYWORD2
 toggle KEYWORD2
 setState KEYWORD2
-getStatus KEYWORD2
+getState KEYWORD2
 value KEYWORD2
 getAnalog KEYWORD2
 setAnalog KEYWORD2

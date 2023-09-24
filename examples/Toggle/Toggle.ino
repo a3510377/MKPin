@@ -12,7 +12,7 @@ void setup() {
 void loop() {
   // digitalWrite(digitalRead(13));
   // - pin.value(!pin.value());
-  // - pin.setState(!pin.getStatus());
+  // - pin.setState(!pin.getState());
   pin.toggleState();
 
   delay(200);

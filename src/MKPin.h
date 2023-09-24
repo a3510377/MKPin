@@ -178,7 +178,7 @@ class Pin {
    * @return pin status (HIGH, LOW)
    */
   inline uint8_t getStatus() {
-    return !!(*_in & _bitMask);
+    return *_in & _bitMask ? HIGH : LOW;
   }
 
   /**
@@ -223,7 +223,7 @@ class Pin {
    * @return pin status (HIGH, LOW)
    */
   inline uint8_t getOutputState() {
-    return !!(*_out & _bitMask);
+    return *_out & _bitMask ? HIGH : LOW;
   }
 
   /**

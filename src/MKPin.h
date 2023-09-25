@@ -41,7 +41,7 @@ class Pin {
    * @return The current state of the pin
    */
   operator bool() const {
-    return bool(digitalRead(_pin));
+    return !!value();
   }
 
   /**
@@ -103,7 +103,7 @@ class Pin {
    *
    * @return mode (INPUT, OUTPUT, INPUT_PULLUP)
    */
-  uint8_t getMode() {
+  uint8_t getMode() const {
     // OUTPUT
     if (*_reg & _bitMask) {
       return OUTPUT;
@@ -177,7 +177,7 @@ class Pin {
    *
    * @return pin state (HIGH, LOW)
    */
-  inline uint8_t getState() {
+  inline uint8_t getState() const {
     return *_in & _bitMask ? HIGH : LOW;
   }
 
@@ -186,7 +186,7 @@ class Pin {
    *
    * @return pin state (HIGH, LOW)
    */
-  inline uint8_t value() {
+  inline uint8_t value() const {
     return getState();
   }
 
@@ -204,7 +204,7 @@ class Pin {
    *
    * @return pin analog input value (0~1023)
    */
-  inline int getAnalog() {
+  inline int getAnalog() const {
     return analogRead(_pin);
   }
 
@@ -222,7 +222,7 @@ class Pin {
    *
    * @return pin state (HIGH, LOW)
    */
-  inline uint8_t getOutputState() {
+  inline uint8_t getOutputState() const {
     return *_out & _bitMask ? HIGH : LOW;
   }
 
@@ -235,13 +235,13 @@ class Pin {
     return _pin;
   }
 
-  inline volatile uint8_t *getModeReg() {
+  inline volatile uint8_t *getModeReg() const {
     return _reg;
   }
-  inline volatile uint8_t *getInputReg() {
+  inline volatile uint8_t *getInputReg() const {
     return _in;
   }
-  inline volatile uint8_t *getOutputReg() {
+  inline volatile uint8_t *getOutputReg() const {
     return _out;
   }
 

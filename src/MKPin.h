@@ -235,12 +235,21 @@ class Pin {
     return _pin;
   }
 
+  /**
+   * Get the pin Mode Register
+   */
   inline volatile uint8_t *getModeReg() const {
     return _reg;
   }
+  /**
+   * Get the pin Input Register
+   */
   inline volatile uint8_t *getInputReg() const {
     return _in;
   }
+  /**
+   * Get the pin Output Register
+   */
   inline volatile uint8_t *getOutputReg() const {
     return _out;
   }

@@ -20,10 +20,10 @@ class Pin {
     _bitMask = digitalPinToBitMask(pin);
     _bitNotMask = ~_bitMask;
 
-    uint8_t port = digitalPinToPort(pin);
-    _reg = portModeRegister(port);
-    _in = portInputRegister(port);
-    _out = portOutputRegister(port);
+    _port = digitalPinToPort(pin);
+    _reg = portModeRegister(_port);
+    _in = portInputRegister(_port);
+    _out = portOutputRegister(_port);
   }
 
   Pin(uint8_t pin, uint8_t bitMask, uint8_t timer, volatile uint8_t *reg,
@@ -236,26 +236,46 @@ class Pin {
   }
 
   /**
+   * Get the pin bit mask
+   */
+  inline uint8_t getPinBitMask() const {
+    return _bitMask;
+  }
+
+  /**
+   * Get the pin port
+   */
+  inline uint8_t getPinPort() const {
+    return _port;
+  }
+
+  /**
    * Get the pin Mode Register
+   *
+   * @return the pin Mode Register
    */
   inline volatile uint8_t *getModeReg() const {
     return _reg;
   }
   /**
    * Get the pin Input Register
+   *
+   * @return the pin Input Register
    */
   inline volatile uint8_t *getInputReg() const {
     return _in;
   }
   /**
    * Get the pin Output Register
+   *
+   * @return the pin Output Register
    */
   inline volatile uint8_t *getOutputReg() const {
     return _out;
   }
 
  protected:
-  uint8_t _pin, _bitMask, _bitNotMask;
+  uint8_t _pin, _port, _bitMask, _bitNotMask;
   volatile uint8_t *_reg, *_in, *_out;
 };
 
